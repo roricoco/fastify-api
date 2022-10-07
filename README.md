@@ -1,23 +1,24 @@
-# Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
-This project was bootstrapped with Fastify-CLI.
+# Addprism API
 
-## Available Scripts
+개발모드
 
-In the project directory, you can run:
+```shell
+yarn dev
+```
 
-### `npm run dev`
+실서버 빌드
 
-To start the app in dev mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```shell
+yarn build
+```
 
-### `npm start`
+실서버 시작
 
-For production mode
+```shell
+yarn start
+```
 
-### `npm run test`
-
-Run the test cases.
-
-## Learn More
-
-To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
+> 사용기술
+>
+> - fastify
+> - mercurius (GraphQL)
