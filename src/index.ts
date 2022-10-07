@@ -138,5 +138,5 @@ app.get('/rice', async (request: FastifyRequest, reply: FastifyReply) => {
 });
 
 (async () => {
-  await app.listen({ port: PORT });
+  await app.listen({ host: '::', port: PORT });
 })();
