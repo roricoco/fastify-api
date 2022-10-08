@@ -56,7 +56,7 @@ app.get('/rice', async (request: FastifyRequest, reply: FastifyReply) => {
 
       returnHtml +=
         error.code == undefined
-          ? '오늘은 메뉴가 없는거 같아요! 사이트에서 확인해주세요!'
+          ? '오늘은 메뉴가 없는거 같아요! <a href="https://www.hanyang.ac.kr/web/www/re11">사이트</a>에서 확인해주세요!'
           : `오..이런.. 오류가 난거같아요 새로고침 해주세요!: ${error.code} `;
       returnHtml += '\n\n';
     });
@@ -102,7 +102,7 @@ app.get('/rice', async (request: FastifyRequest, reply: FastifyReply) => {
 
       returnHtml +=
         error.code == undefined
-          ? '오늘은 메뉴가 없는거 같아요! 사이트에서 확인해주세요!'
+          ? '오늘은 메뉴가 없는거 같아요! <a href="https://www.hanyang.ac.kr/web/www/re12">사이트</a>에서 확인해주세요!'
           : `오..이런.. 오류가 난거같아요 새로고침 해주세요!: ${error.code} `;
 
       returnHtml += '\n\n';
@@ -134,7 +134,7 @@ app.get('/rice', async (request: FastifyRequest, reply: FastifyReply) => {
 
       returnHtml +=
         error.code == undefined
-          ? '오늘은 메뉴가 없는거 같아요! 사이트에서 확인해주세요!'
+          ? '오늘은 메뉴가 없는거 같아요! <a href="https://www.hanyang.ac.kr/web/www/re15">사이트</a>에서 확인해주세요!'
           : `오..이런.. 오류가 난거같아요 새로고침 해주세요!: ${error.code} `;
       returnHtml += '\n\n';
     });
