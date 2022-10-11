@@ -2,6 +2,7 @@ import { FastifyReply, FastifyRequest, fastify } from 'fastify';
 
 import axios from 'axios';
 import dotenv from 'dotenv';
+
 import { cardType } from './card';
 
 dotenv.config();
@@ -143,13 +144,26 @@ app.get('/rice', async (request: FastifyRequest, reply: FastifyReply) => {
   return `<div>${String(returnHtml).split('\n').join('<br>')}</div>`;
 });
 
-app.get('/cardType', async (request: FastifyRequest, reply: FastifyReply) => {
+app.get('/cardtype', async (request: FastifyRequest, reply: FastifyReply) => {
   return cardType;
 });
 
-app.post('/cardType/check', async (request: FastifyRequest, reply: FastifyReply) => {
-  console.log(request);
-  return cardType;
+app.post('/cardtype/check', async (request: any, reply: FastifyReply) => {
+  let returnData;
+  cardType.map((x, i) => {
+    const cardno = String(request?.body?.cardNo).replace('-', '').slice(0, 6);
+    const Findno = x.cardNo.includes(cardno);
+
+    if (Findno == true) {
+      returnData = { cardNm: x.cardNm, cardNo: request?.body?.cardNo };
+    }
+  });
+
+  if (!returnData) {
+    reply.code(500);
+    return { code: 500, message: 'Internal Server Error' };
+  }
+  return returnData;
 });
 
 (async () => {
