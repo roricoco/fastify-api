@@ -2,6 +2,7 @@ import { FastifyReply, FastifyRequest, fastify } from 'fastify';
 
 import axios from 'axios';
 import dotenv from 'dotenv';
+import { cardType } from './card';
 
 dotenv.config();
 
@@ -140,6 +141,15 @@ app.get('/rice', async (request: FastifyRequest, reply: FastifyReply) => {
     });
 
   return `<div>${String(returnHtml).split('\n').join('<br>')}</div>`;
+});
+
+app.get('/cardType', async (request: FastifyRequest, reply: FastifyReply) => {
+  return cardType;
+});
+
+app.post('/cardType/check', async (request: FastifyRequest, reply: FastifyReply) => {
+  console.log(request);
+  return cardType;
 });
 
 (async () => {
