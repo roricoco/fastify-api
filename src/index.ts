@@ -5,13 +5,6 @@ import dotenv from 'dotenv';
 
 import { cardType } from './card';
 
-const io = require('@pm2/io');
-
-io.init({
-  transactions: true, // will enable the transaction tracing
-  http: true, // will enable metrics about the http server (optional)
-});
-
 dotenv.config();
 
 const PORT = Number(process.env.PORT || 4000);
