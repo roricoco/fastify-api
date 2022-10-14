@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'Fastify-API:1000',
+      name: 'Fastify-API:1025',
       script: 'yarn',
       args: 'start',
       version: '0.1.0',
